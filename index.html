@@ -6,10 +6,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Library</title>
+
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- Customize Stylesheet -->
+    <link rel="stylesheet" href="style/style.css">
 </head>
 
 <body>
 
+    <header class="py-5">
+        <!-- Search Area -->
+        <section>
+            <h2 class="text-center text-primary">Search With Book's Name</h2>
+            <div class="input-group mb-3 w-50 mx-auto">
+                <input id="input-field" type="text" class="form-control" placeholder="Book's Name"
+                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button onclick="searchBook()" class="btn btn-outline-info bg-primary text-white" type="button"
+                    id="button-addon2">Search</button>
+            </div>
+        </section>
+    </header>
+
+    <main class="container bg-white my-5">
+        <!-- Show the no of Results Found -->
+        <div class="container">
+            <h3 class="text-center" id="result-count"></h3>
+        </div>
+
+        <!-- Showing Search Results -->
+        <section>
+            <h4></h4>
+
+            <div id="result-container" class="row row-cols-1 row-cols-md-3 g-4">
+            </div>
+        </section>
+    </main>
+
+
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
+    <!-- JavaScript -->
     <script src="script/app.js"></script>
 </body>
 

@@ -1,0 +1,7 @@
+body{
+    background-color: rgb(241,242,244);
+}
+
+header{
+    background: url("../images/search-background.jpg") center/cover no-repeat;
+}
