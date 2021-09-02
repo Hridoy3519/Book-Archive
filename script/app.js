@@ -77,7 +77,7 @@ const showSearchResult = data => {
 }
 
 //Handling Broken url of image(Did some research on Stake Overflow)
-const imgError = (image) => {
+const imgError = image => {
     console.log(image)
     image.onerror = "";
     image.src = "../images/not-available.jpg";
@@ -85,14 +85,14 @@ const imgError = (image) => {
 }
 
 //3 function to manipulate these toggle effects
-const toggleResultArea = (displayStyle) => {
+const toggleResultArea = displayStyle => {
     document.getElementById('result-area').style.display = displayStyle;
 }
 
-const toggleErrorMessage = (displayStyle) => {
+const toggleErrorMessage = displayStyle => {
     document.getElementById('error-message').style.display = displayStyle;
 }
 
-const toggleSpinner = (displayStyle) => {
+const toggleSpinner = displayStyle => {
     document.getElementById('spinner-area').style.display = displayStyle;
 }
