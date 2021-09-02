@@ -31,16 +31,23 @@
     </header>
 
     <main class="container bg-white my-5">
-        <!-- Show the no of Results Found -->
-        <div class="container">
-            <h3 class="text-center" id="result-count"></h3>
-        </div>
+
+        <!-- Spinner Area -->
+        <section id="spinner-area">
+
+        </section>
 
         <!-- Showing Search Results -->
-        <section>
-            <h4></h4>
+        <section class="p-5" id="result-area">
+            <!-- Show the no of Results Found -->
+            <div class="container">
+                <h3 id="result-count"></h3>
+            </div>
 
-            <div id="result-container" class="row row-cols-1 row-cols-md-3 g-4">
+            <div>
+                <h4></h4>
+                <div id="result-container" class="row row-cols-1 row-cols-md-3 g-4">
+                </div>
             </div>
         </section>
     </main>

@@ -8,5 +8,9 @@ header{
 
 #result-container img{
     /* background: url("../images/not-available.png") center/cover no-repeat; */
-    height: 500px;
+    height: 150px;
+}
+
+#result-area{
+    display: none;
 }
