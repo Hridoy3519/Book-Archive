@@ -1,6 +1,6 @@
 const searchBook = () => {
 
-    //Hide Result Area, until data loaded
+    //Showing Spinner until data loads
     toggleResultArea('none');
     toggleErrorMessage('none');
     toggleSpinner('block');
@@ -10,7 +10,7 @@ const searchBook = () => {
     searchText = inputField.value;
     inputField.value = "";
 
-    //load api using dynamic url
+    //loading api using dynamic url
     const url = `https://openlibrary.org/search.json?q=${searchText}`;
     fetch(url)
         .then(res => res.json())
@@ -18,9 +18,7 @@ const searchBook = () => {
 }
 
 const showSearchResult = data => {
-    const resultCount = document.getElementById('result-count');
     const bookList = data.docs;
-
     //showing error message
     if (bookList.length === 0) {
         toggleErrorMessage('block');
@@ -29,15 +27,18 @@ const showSearchResult = data => {
         return;
     }
 
+    // Showing how many search results found
+    const resultCount = document.getElementById('result-count');
     resultCount.innerText = `Showing ${bookList.length} Results out of ${data.numFound} entries`;
 
     //Displaying search Result and handling other messages
     toggleResultArea('block');
     toggleErrorMessage('none');
     toggleSpinner('none');
+
+    //Erase previous search results and display new
     const resultContainer = document.getElementById('result-container');
     resultContainer.textContent = "";
-
     bookList.forEach(book => {
         const div = document.createElement('div');
         div.classList.add('col');
@@ -48,9 +49,8 @@ const showSearchResult = data => {
             imgURL = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
         }
 
-
         div.innerHTML = `
-        <div id="card-style" class="card mb-3 h-100" style="max-width: 540px;">
+        <div id="card-style" class="card mb-3 h-100 bg-light" style="max-width: 540px;">
             <div class="row g-0">
                 <div class="col-md-4">
                     <img src=${imgURL} class="card-img-top" onerror="imgError(this);" alt="..."> 
@@ -76,6 +76,7 @@ const showSearchResult = data => {
     });
 }
 
+//Handling Broken url of image(Did some research on Stake Overflow)
 const imgError = (image) => {
     console.log(image)
     image.onerror = "";
@@ -83,6 +84,7 @@ const imgError = (image) => {
     return true;
 }
 
+//3 function to manipulate these toggle effects
 const toggleResultArea = (displayStyle) => {
     document.getElementById('result-area').style.display = displayStyle;
 }

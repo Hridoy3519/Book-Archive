@@ -2,18 +2,23 @@ body{
     background-color: rgb(241,242,244);
 }
 
+/* Setting Search Area Background Image */
 header{
     background: url("../images/search-background.jpg") center/cover no-repeat;
 }
 
+/* Display Result simple customization */
 #result-container img{
-    /* background: url("../images/not-available.png") center/cover no-repeat; */
     height: 150px;
 }
 
 #card-style:hover{
     box-shadow: 10px 10px 10px lightgray;
     transition: 0.3s all linear;
+}
+
+.card-text{
+    margin: 0;
 }
 
 #result-area{
