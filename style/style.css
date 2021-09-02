@@ -11,6 +11,19 @@ header{
     height: 150px;
 }
 
+#card-style:hover{
+    box-shadow: 10px 10px 10px lightgray;
+    transition: 0.3s all linear;
+}
+
 #result-area{
+    display: none;
+}
+
+#error-message{
+    display: none;
+}
+
+#spinner-area{
     display: none;
 }
