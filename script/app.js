@@ -45,7 +45,7 @@ const showSearchResult = data => {
         //Getting Book cover img url
         let imgURL = "../images/not-available.jpg";
         if (book.cover_i) {
-            imgURL = `http://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
+            imgURL = `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`;
         }
 
 
