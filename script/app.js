@@ -13,21 +13,31 @@ const searchBook = () => {
 
 const showSearchResult = bookList => {
     const resultCount = document.getElementById('result-count');
-    resultCount.innerText = `Total Results Found: ${bookList.length}`;
+    resultCount.innerText = `Total Results Found: ${bookList.numFound}`;
 
     //Displaying search Result
     const resultContainer = document.getElementById('result-container');
+    resultContainer.textContent = "";
 
     bookList.forEach(book => {
         const div = document.createElement('div');
         div.classList.add('col');
+
+        //Getting Book cover img url
+        let imgURL = "../images/not-available.png";
+        if (book.cover_i) {
+            imgURL = `http://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`;
+        }
+
+        console.log(imgURL.status);
         div.innerHTML = `
         <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
+            <img src=${imgURL} class="card-img-top" alt="..."></img>          
             <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                    to additional content. This content is a little bit longer.</p>
+                <h5 class="card-title">Title: ${book.title}</h5>
+                <h5 class="card-title">Author: ${book.author_name}</h5>
+                <p class="card-text">Publisher: ${book.publisher?.[0]}</p>
+                <p class="card-text">First Published on: ${book.first_publish_year}</p>
             </div>
         </div>`;
         resultContainer.appendChild(div);

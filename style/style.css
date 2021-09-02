@@ -5,3 +5,8 @@ body{
 header{
     background: url("../images/search-background.jpg") center/cover no-repeat;
 }
+
+#result-container img{
+    /* background: url("../images/not-available.png") center/cover no-repeat; */
+    height: 500px;
+}
