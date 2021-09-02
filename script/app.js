@@ -29,10 +29,9 @@ const showSearchResult = bookList => {
             imgURL = `http://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`;
         }
 
-        console.log(imgURL.status);
         div.innerHTML = `
         <div class="card h-100">
-            <img src=${imgURL} class="card-img-top" alt="..."></img>          
+            <img src=${imgURL} class="card-img-top" onerror="imgError(this);" alt="...">         
             <div class="card-body">
                 <h5 class="card-title">Title: ${book.title}</h5>
                 <h5 class="card-title">Author: ${book.author_name}</h5>
@@ -42,4 +41,11 @@ const showSearchResult = bookList => {
         </div>`;
         resultContainer.appendChild(div);
     });
+}
+
+const imgError = (image) => {
+    console.log(image)
+    image.onerror = "";
+    image.src = "../images/not-available.png";
+    return true;
 }
